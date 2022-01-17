@@ -19,7 +19,7 @@ margin-top:20px;
   display: inline-block;
 }
 
-.submit_button:hover{
+.submit_button:hover,.nav-link:hover{
   border-color: #9bdbf2;
   color: #9bdbf2;
 }

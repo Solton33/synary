@@ -71,12 +71,13 @@ a:hover {
   float: left;
 }
 
-h1.grid-6 a {
-  display: block;
-}
-
 div.grid-6 {
   float: right;
   text-align: right;
+}
+
+.nickname{
+  font-size: 20px;
+  margin: 100px;
 }
 

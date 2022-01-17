@@ -1,0 +1,25 @@
+input[type="text"],input[type="email"],input[type="password"],input[type="password_confirmation"]{
+  border: 2px solid #57C3E9;
+  width: 20%;
+  height: 30px;
+}
+
+.actions{
+margin-top:20px;
+}
+.submit_button,.nav-link{
+  margin-top: 5px;
+  padding: 8px 20px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.submit_button:hover,.nav-link:hover{
+  border-color: #9bdbf2;
+  color: #9bdbf2;
+}

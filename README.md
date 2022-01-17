@@ -5,8 +5,7 @@
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
-| birth_month        | string | null: false |
-| birth_day          | string | null: false |
+| birth_day          | date   | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
 
@@ -17,7 +16,7 @@
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| scenario   | string     | null: false                    |
+| scenario   | text       | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 - belongs_to :user

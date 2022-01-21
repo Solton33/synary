@@ -10,8 +10,8 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :アカウント名 %><br />
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", maxlength: "20" %>
+      <%= f.label :アカウント名 %><em>(8文字以下)</em><br />
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
     </div>
 
     <div class="field">
@@ -27,7 +27,7 @@
     <div class="field">
       <%= f.label :パスワード %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <em>(<%= @minimum_password_length %>文字以上,英数字混合)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>

@@ -17,6 +17,8 @@
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | scenario   | text       | null: false                    |
+| title      | string     | null: false                    |
+| image      | text       |                                |
 | user       | references | null: false, foreign_key: true |
 
 - belongs_to :user

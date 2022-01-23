@@ -1,0 +1,76 @@
+form input,
+form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 2px solid #57C3E9;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  background-color: #57C3E9;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto }
+
+form input[type="submit"]:hover {
+  background-color: #84d3ef;
+}
+
+.title{
+  width:500%;
+  height: 100%;
+}
+
+.hidden{
+  width: 30%;
+  height: 10%;
+}
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+
+.content_post{
+  display: inline-flex;
+  position: relative;
+  margin: 10px;
+}
+
+.new_topic{
+  font-size: 30px;
+  text-align: center;
+}
+
+.content_image{
+  width: 180px;
+  height: 210px;
+}
+
+.content_title{
+  position: absolute;
+  padding-top: 220px;
+
+}
+
+.success{
+  text-align: center;
+}

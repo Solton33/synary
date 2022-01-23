@@ -9,13 +9,18 @@ class ScenariosController < ApplicationController
   end
 
   def create
-    Scenario.create(scenario_params)
+    @scenario = Scenario.new(scenario_params)
+    if @scenario.save
+      redirect_to scenarios_path
+    else
+      render :new
+    end
   end
 
   private
    
   def scenario_params
-    params.require(:scenario).permit(:title, :image, :scenario).merge(user_id: current_user.id)
+    params.require(:scenario).permit(:title, :scenario, :image).merge(user_id: current_user.id)
   end
 
   

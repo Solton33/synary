@@ -1,1 +1,15 @@
 <%= render "shared/header" %>
+
+  <div class="contents row">
+      <h1 class="new_topic">- NEW TOPIC -</h1>
+        <% @scenarios.each do |scenario| %>
+          <div class="content_post">
+            <%= link_to "#" do %>
+              <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
+            <% end %>
+              <div class="content_title">
+                <h3><%= scenario.title %></h3>
+              </div>
+          </div>
+        <% end %>
+    </div>

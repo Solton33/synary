@@ -4,7 +4,7 @@
     <div class="user_nav grid-6">
     <% if user_signed_in? %>
       <%= link_to current_user.nickname, "#", class: "nickname" %>
-      <%= link_to "投稿する", "#", class: "post" %>
+      <%= link_to "投稿する", new_scenario_path, class: "post" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
      <% else %> 
       <%= link_to "新規登録", new_user_registration_path, method: :get, class: "signin" %>

@@ -4,7 +4,7 @@
       <h1 class="new_topic">- NEW TOPIC -</h1>
         <% @scenarios.each do |scenario| %>
           <div class="content_post">
-            <%= link_to "#" do %>
+            <%= link_to scenario_path(scenario.id),metod: :get do %>
               <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
             <% end %>
               <div class="content_title">

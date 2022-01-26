@@ -83,6 +83,10 @@ form input[type="submit"]:hover {
   font-size: 25px;
 }
 
+.top_image{
+  padding-bottom: 10px;
+}
+
 .top_nickname{
  margin:20px 0;
 }
@@ -90,6 +94,18 @@ form input[type="submit"]:hover {
 .top_scenario{
   border: 1px solid #666;
   padding:20px;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.manage_btn{
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 3px #57C3E9 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
 }
 

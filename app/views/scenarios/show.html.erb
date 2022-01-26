@@ -5,6 +5,10 @@
       <div class="top_image">
         <%= image_tag @scenario.image.variant(resize: "180x210") %>
       </div>
+      <div class=top_manage>
+        <%= link_to "編集", edit_scenario_path(@scenario.id), class: "manage_btn" %>
+        <%= link_to "削除", "#", class: "manage_btn" %>
+      </div>
       <div class="main_content">
         <div class="top_title">
           <%= @scenario.title %>

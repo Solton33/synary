@@ -17,10 +17,15 @@ class ScenariosController < ApplicationController
     end
   end
 
+  def show
+    @scenario = Scenario.find(params[:id])
+  end
+
+
   private
    
   def scenario_params
-    params.require(:scenario).permit(:title, :scenario, :image).merge(user_id: current_user.id)
+    params.require(:scenario).permit(:title, :scenario, :image, :nickname).merge(user_id: current_user.id)
   end
 
   

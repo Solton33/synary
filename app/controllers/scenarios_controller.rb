@@ -21,6 +21,19 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.find(params[:id])
   end
 
+  def edit
+    @scenario = Scenario.find(params[:id])
+  end
+
+  def update
+    scenario = Scenario.find(params[:id])
+    if scenario.update(scenario_params)
+      redirect_to scenario_path(scenario.id)
+    else
+      render :edit
+    end
+  end
+
 
   private
    

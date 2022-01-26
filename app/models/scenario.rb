@@ -4,7 +4,7 @@ class Scenario < ApplicationRecord
 
   with_options presence: true do
     validates :scenario
-    validates :title
+    validates :title, length:{maximum:50}
     validates :image
   end
 end

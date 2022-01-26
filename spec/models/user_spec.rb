@@ -16,31 +16,31 @@ RSpec.describe User, type: :model do
       it 'nicknameが空白では登録できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Nickname can't be blank") 
+        expect(@user.errors.full_messages).to include("アカウント名を入力してください") 
       end
 
       it 'nicknameが9文字文字以上では登録できない' do
           @user.nickname = 'aaaaaaaaa'
           @user.valid?
-          expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 8 characters)")
+          expect(@user.errors.full_messages).to include("アカウント名は8文字以内で入力してください")
       end
 
       it 'birth_dayが空白では登録できない' do
         @user.birth_day = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Birth day can't be blank")
+        expect(@user.errors.full_messages).to include("Birth dayを入力してください")
       end
 
       it 'emailが空白では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email can't be blank")
+        expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
 
       it 'emailに@がなければ登録できない' do
         @user.email = 'example.com'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
         
       end
 
@@ -49,41 +49,42 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email 
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
         
       end
 
       it 'passwordが空白では登録できない' do
         @user.password = ''
+        @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password can't be blank")
+        expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワードは不正な値です")
       end
 
       it 'passwordが英字だけでは登録できない' do
         @user.password = "aaaaaa"
-        @user.password = "aaaaaa"
+        @user.password_confirmation = "aaaaaa"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("パスワードは不正な値です")
       end
 
       it 'passwordが数字だけでは登録できない' do
         @user.password = "000000"
         @user.password_confirmation = "000000"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("パスワードは不正な値です")
       end
 
       it 'passwordが5文字以下では登録できない' do
         @user.password = "000ab"
         @user.password_confirmation = "000ab"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください")
       end
 
       it 'passwordとpassword_confirmationが一致していなければ登録できない' do
         @user.password_confirmation=''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
     
     end

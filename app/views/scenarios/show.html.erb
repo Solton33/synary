@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+
+  <div class="main">
+    <div class="scenario_main">
+      <div class="top_image">
+        <%= image_tag @scenario.image.variant(resize: "180x210") %>
+      </div>
+      <div class="main_content">
+        <div class="top_title">
+          <%= @scenario.title %>
+        </div>
+        <div class="top_nickname">
+          <%= "by" + @scenario.user.nickname %>
+        </div>
+        <div class="top_scenario">
+          <%=  @scenario.scenario %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -33,7 +33,7 @@ form input[type="submit"]:hover {
   height: 10%;
 }
 
-.container {
+.container, .main_content{
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
@@ -71,6 +71,25 @@ form input[type="submit"]:hover {
 
 }
 
-.success{
+.success,.scenario_main{
   text-align: center;
 }
+
+.top_title{
+  display:table;
+  margin:0 auto;
+  border: 1px solid #666;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.top_nickname{
+ margin:20px 0;
+}
+
+.top_scenario{
+  border: 1px solid #666;
+  padding:20px;
+  font-size: 20px;
+}
+

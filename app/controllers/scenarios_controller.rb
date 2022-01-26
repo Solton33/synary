@@ -11,7 +11,7 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(scenario_params)
     if @scenario.save
-      redirect_to scenarios_path
+      render :create
     else
       render :new
     end

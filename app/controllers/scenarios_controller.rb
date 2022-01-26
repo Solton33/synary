@@ -1,4 +1,7 @@
 class ScenariosController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_scenario, only: [:show, :edit]
+  before_action :set_scenario2, only: [:update, :destroy]
 
   def index
     @scenarios = Scenario.all 
@@ -18,19 +21,28 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    @scenario = Scenario.find(params[:id])
   end
 
   def edit
-    @scenario = Scenario.find(params[:id])
+    if current_user.id != @scenario.user_id
+      redirect_to root_path
+    end 
   end
 
   def update
-    scenario = Scenario.find(params[:id])
-    if scenario.update(scenario_params)
-      redirect_to scenario_path(scenario.id)
+      if scenario.update(scenario_params)
+        redirect_to scenario_path(scenario.id)
+      else
+        render :edit
+      end
+  end
+
+  def destroy
+    if current_user == scenario.user_id
+      scenario.destroy
+      redirect_to root_path
     else
-      render :edit
+      redirect_to root_path
     end
   end
 
@@ -39,6 +51,14 @@ class ScenariosController < ApplicationController
    
   def scenario_params
     params.require(:scenario).permit(:title, :scenario, :image, :nickname).merge(user_id: current_user.id)
+  end
+
+  def set_scenario
+    @scenario = Scenario.find(params[:id])
+  end
+    
+  def set_scenario2
+    scenario = Scenario.find(params[:id])
   end
 
   

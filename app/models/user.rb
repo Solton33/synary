@@ -12,4 +12,5 @@ class User < ApplicationRecord
   end
 
   has_many :scenarios
+  has_one_attached :image
 end

@@ -3,7 +3,7 @@
     <h1 class="grid-6"><a href="/">Synary</a></h1>
     <div class="user_nav grid-6">
     <% if user_signed_in? %>
-      <%= link_to current_user.nickname, "#", class: "nickname" %>
+      <%= link_to current_user.nickname, user_path(current_user.id), method: :get, class: "nickname" %>
       <%= link_to "投稿する", new_scenario_path, class: "post" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
      <% else %> 

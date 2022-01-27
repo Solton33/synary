@@ -21,6 +21,7 @@ class ScenariosController < ApplicationController
   end
 
   def show
+    @user = @scenario.user_id
   end
 
   def edit

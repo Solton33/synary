@@ -16,7 +16,7 @@
           <%= @scenario.title %>
         </div>
         <div class="top_nickname">
-          <%= "by" + @scenario.user.nickname %>
+          by <%= link_to @scenario.user.nickname, user_path(@user) %>
         </div>
         <div class="top_scenario">
           <%=  @scenario.scenario %>

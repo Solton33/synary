@@ -1,0 +1,32 @@
+.user_nickname{
+  font-size: 30px;
+}
+
+.users{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.user_scenarios{
+  display:inline-flex;
+}
+
+.user_image{
+  margin:10px 15px;
+}
+
+.user_title{
+  margin:10px 30px;
+}
+
+.manage_btn{
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 3px #57C3E9 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}

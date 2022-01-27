@@ -1,6 +1,5 @@
 class ScenariosController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_scenario, only: [:show, :edit]
 
   def index
     @scenarios = Scenario.all 
@@ -20,10 +19,11 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    @user = @scenario.user_id
+    @scenario = Scenario.find(params[:id])
   end
 
   def edit
+    @scenario = Scenario.find(params[:id])
     if current_user.id != @scenario.user_id
       redirect_to root_path
     end 
@@ -56,7 +56,7 @@ class ScenariosController < ApplicationController
   end
 
   def set_scenario
-    @scenario = Scenario.find(params[:id])
+    
   end
   
 end

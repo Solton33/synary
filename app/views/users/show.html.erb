@@ -12,7 +12,7 @@
 
 <div class="user_scenarios">
   <% @scenarios.each do |scenario| %>
-    <%= link_to scenario_path(@user.id),metod: :get do %>
+    <%= link_to scenario_path(scenario.id),metod: :get do %>
       <div class="user_image">
         <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
       </div>

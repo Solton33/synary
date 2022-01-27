@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+
+  <div class="user_nickname">
+    <%= @user.nickname + "さんのプロフィール" %>
+  </div>
+<div class="user_birth">
+  誕生日<%= @user.birth_day %>
+</div>
+<div class="users">
+  <%= @user.nickname + "さんの作品" %>
+</div>
+
+<div class="user_scenarios">
+  <% @scenarios.each do |scenario| %>
+    <%= link_to scenario_path(@user.id),metod: :get do %>
+      <div class="user_image">
+        <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
+      </div>
+      <div class="user_title">
+        <%= scenario.title %>
+    </div>
+  <% end %>  
+<% end %>
+</div>
+

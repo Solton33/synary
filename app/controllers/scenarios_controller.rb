@@ -20,6 +20,8 @@ class ScenariosController < ApplicationController
 
   def show
     @scenario = Scenario.find(params[:id])
+    @comment = Comment.new
+    @comments = @scenario.comments.includes(:user)
   end
 
   def edit

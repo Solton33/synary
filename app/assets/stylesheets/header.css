@@ -87,10 +87,11 @@ div.grid-6 {
   position: absolute;
   display: inline-block;
   margin-left: 80px;
+  margin-top: 10px;
 }
 
 .search-btn{
   position: absolute;
   left: 35vw;
-  top:1vh
+  bottom: -0.5vh;
 }

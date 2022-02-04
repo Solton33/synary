@@ -19,7 +19,7 @@
           by <%= link_to @scenario.user.nickname, user_path(@scenario.user_id) %>
         </div>
         <div class="top_scenario">
-          <%=  @scenario.scenario %>
+          <%= safe_join(@scenario.scenario.split("\n"),tag(:br)) %>
         </div>
         <div class="container">
           <% if user_signed_in? %>

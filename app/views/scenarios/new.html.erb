@@ -9,6 +9,7 @@
       </div>
       <%= form.file_field :image %>
       <%= form.text_area :scenario, placeholder: "テキスト", rows: "10" %>
+      <trix-editor input="scenario_scenario"></trix-editor>
       <%= form.submit "投稿" %>
     <% end %>
   </div>

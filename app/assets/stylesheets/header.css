@@ -72,8 +72,9 @@ a:hover {
 }
 
 div.grid-6 {
-  float: right;
-  text-align: right;
+  position: absolute;
+  top: 0%;
+  right: 0%;
 }
 
 .nickname{
@@ -81,3 +82,15 @@ div.grid-6 {
   margin: 100px;
 }
 
+.search-form{
+  width: 150vw;
+  position: absolute;
+  display: inline-block;
+  margin-left: 80px;
+}
+
+.search-btn{
+  position: absolute;
+  left: 35vw;
+  top:1vh
+}

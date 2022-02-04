@@ -8,4 +8,13 @@ class Scenario < ApplicationRecord
     validates :title, length:{maximum:50}
     validates :image
   end
+
+  def self.search(search)
+    if search != ""
+      Scenario.where('scenario LIKE(?)', "%#{search}%")
+    else
+      Scenario.all
+    end
+  end
+
 end

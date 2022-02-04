@@ -1,6 +1,10 @@
 <header class="header">
   <div class="header__bar row">
     <h1 class="grid-6"><a href="/">Synary</a></h1>
+    <%= form_with(url: search_scenarios_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
     <div class="user_nav grid-6">
     <% if user_signed_in? %>
       <%= link_to current_user.nickname, user_path(current_user.id), method: :get, class: "nickname" %>

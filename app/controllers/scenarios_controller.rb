@@ -1,5 +1,5 @@
 class ScenariosController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:index,:show, :search]
 
   def index
     @scenarios = Scenario.all 
@@ -48,6 +48,10 @@ class ScenariosController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def search
+    @scenarios = Scenario.search(params[:keyword])
   end
 
 

@@ -3,8 +3,8 @@
 ## アプリケーション名
 * [Synary (シナリー）]( https://synary.herokuapp.com/
 )
-* テスト用アカウント：otamesi@gmail.com
-* ID/Pass : solton/0528
+* テスト用アカウント/Pass：otamesi@gmail.com/123asd
+* Basic ID/Pass : solton/0528
 ---
 
 ## アプリケーション概要

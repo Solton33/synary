@@ -21,7 +21,7 @@
         </div>
         <% if @tags.present? %>
           <% @tags.each do |tag| %>
-              <%= link_to "#{tag.name}", root_path(tag: tag.name) %>
+              <%= link_to "#{tag.name}", root_path(tag: tag.name), class: "tag_name" %>
           <% end %>
         <% else %>
           登録されているタグはありません

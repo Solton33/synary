@@ -68,6 +68,18 @@ form input[type="submit"]:hover {
   height: 210px;
 }
 
+.tag_name{
+display: inline-block;
+margin: 0 .1em .6em 0;
+padding: .6em;
+line-height: 1;
+text-decoration: none;
+color: #666;
+background-color: #fff;
+border: 1px solid #666;
+border-radius: 2em;
+}
+
 
 .success,.scenario_main{
   text-align: center;

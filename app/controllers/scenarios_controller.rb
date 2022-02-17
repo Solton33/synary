@@ -2,7 +2,11 @@ class ScenariosController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show, :search]
 
   def index
-    @scenarios = Scenario.all 
+    if params[:tag]
+      @scenarios = Scenario.tagged_with(params[:tag])
+    else
+      @scenarios = Scenario.all.order(created_at: :desc)
+    end
   end
 
   def new
@@ -22,6 +26,7 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.find(params[:id])
     @comment = Comment.new
     @comments = @scenario.comments.includes(:user)
+    @tags = @scenario.tag_counts_on(:tags)
   end
 
   def edit
@@ -58,7 +63,7 @@ class ScenariosController < ApplicationController
   private
    
   def scenario_params
-    params.require(:scenario).permit(:title, :scenario, :image, :nickname).merge(user_id: current_user.id)
+    params.require(:scenario).permit(:title, :scenario, :image, :nickname, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_scenario

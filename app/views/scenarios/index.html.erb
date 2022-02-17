@@ -1,8 +1,10 @@
 <%= render "shared/header" %>
 
-  <div class="contents row">
-      <h1 class="new_topic">- NEW TOPIC -</h1>
+  <h1 class="new_topic">- NEW TOPIC -</h1>
       <% @scenarios.each do |scenario| %>
-        <%= render partial: "scenario", locals: { scenario: scenario} %>
-        <% end %>
-    </div>
+        <div class="contents_row">
+          <%= render partial: "scenario", locals: { scenario: scenario} %>
+        </div>
+      <% end %>
+    
+      

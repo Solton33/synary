@@ -23,7 +23,7 @@ form input[type="submit"]:hover {
   background-color: #84d3ef;
 }
 
-.title{
+.title,.tag{
   width:500%;
   height: 100%;
 }
@@ -49,9 +49,12 @@ form input[type="submit"]:hover {
   color: #666;
 }
 
-.content_post{
+.contents_row{
   display: inline-flex;
-  position: relative;
+  padding: 15px;
+}
+
+.content_post{
   margin: 10px;
 }
 
@@ -65,11 +68,18 @@ form input[type="submit"]:hover {
   height: 210px;
 }
 
-.content_title{
-  position: absolute;
-  padding-top: 220px;
-
+.tag_name{
+display: inline-block;
+margin: 0 .1em .6em 0;
+padding: .6em;
+line-height: 1;
+text-decoration: none;
+color: #666;
+background-color: #fff;
+border: 1px solid #666;
+border-radius: 2em;
 }
+
 
 .success,.scenario_main{
   text-align: center;
@@ -108,4 +118,3 @@ form input[type="submit"]:hover {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-

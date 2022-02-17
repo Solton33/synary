@@ -3,13 +3,6 @@
 <div class="contents row">
   <div class="container">
     <h3>編集する</h3>
-    <%= form_with model: @scenario, local: true do |form| %>
-      <div class="title">
-        <%= form.text_field :title, placeholder: "タイトル" %>
-      </div>
-      <%= form.file_field :image %>
-      <%= form.text_area :scenario, placeholder: "テキスト", rows: "10" %>
-      <%= form.submit "編集" %>
-    <% end %>
+     <%= render partial: "form", locals: { scenario: @scenario} %>
   </div>
 </div>

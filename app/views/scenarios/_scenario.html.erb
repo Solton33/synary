@@ -1,19 +1,10 @@
 
-          <div class="content_post">
-            <%= link_to scenario_path(scenario.id),metod: :get do %>
-              <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
-            <% end %>
-              <div class="content_title">
-                <h3><%= scenario.title %></h3>
-              </div>
-              <div class= "content_tag">
-                <% if @tags.present? %>
-                  <% @tags.each do |tag| %>
-                      <%= link_to tag.name, scenarios_path(tag_name: tag), method: :get %>
-                  <% end %>
-                <% else %>
-                  登録されているタグはありません
-                <% end %>
-              </div>
-            </div>
-          </div>
+<div class="content_post">
+  <%= link_to scenario_path(scenario.id),metod: :get do %>
+    <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
+  <% end %>
+    <div class="content_title">
+      <h3><%= scenario.title %></h3>
+    </div>
+  </div>
+</div>

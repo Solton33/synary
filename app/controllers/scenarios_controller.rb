@@ -2,11 +2,11 @@ class ScenariosController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show, :search]
 
   def index
-    @scenarios = Scenario.all.order(created_at: :desc)
-    @tags = Scenario.tag_counts_on(:tags).most_used(3)
-     if params[:tag_name]
-      @scenarios = Scenario.tagged_with("#{params[:tag_name]}")
-     end   
+    if params[:tag]
+      @scenarios = Scenario.tagged_with(params[:tag])
+    else
+      @scenarios = Scenario.all.order(created_at: :desc)
+    end
   end
 
   def new
@@ -26,7 +26,7 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.find(params[:id])
     @comment = Comment.new
     @comments = @scenario.comments.includes(:user)
-    @tag = @scenario.tag_counts_on(:tags)
+    @tags = @scenario.tag_counts_on(:tags)
   end
 
   def edit

@@ -15,9 +15,17 @@
         <div class="top_title">
           <%= @scenario.title %>
         </div>
+      <div class= "content_tag">
         <div class="top_nickname">
           by <%= link_to @scenario.user.nickname, user_path(@scenario.user_id) %>
         </div>
+        <% if @tags.present? %>
+          <% @tags.each do |tag| %>
+              <%= link_to "#{tag.name}", root_path(tag: tag.name) %>
+          <% end %>
+        <% else %>
+          登録されているタグはありません
+        <% end %>
         <div class="top_scenario">
           <%= safe_join(@scenario.scenario.split("\n"),tag(:br)) %>
         </div>

@@ -39,7 +39,7 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 ---
 
-# DB設計
+# 現在のDB設計
 
 ## users テーブル
 
@@ -77,24 +77,4 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 - belongs_to :user
 - belongs_to :scenario
-
-## tags テーブル
-
-| Column   | Type       | Options      |
-| -------- | ---------- | ------------ |
-| tag      | string     | null: false  |
-
-- has_many :scenario_tags
-- has_many :scenario, through: :scenario_tags
-
-## scenario_tags テーブル
-
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| tag      | references | null: false, foreign_key: true |
-| scenario | references | null: false, foreign_key: true |
-
-- belongs_to :scenario
-- belongs_to :tag
-
 

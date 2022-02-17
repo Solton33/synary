@@ -9,6 +9,8 @@ class Scenario < ApplicationRecord
     validates :image
   end
 
+  acts_as_taggable
+
   def self.search(search)
     if search != ""
       Scenario.where('scenario LIKE(?)', "%#{search}%")

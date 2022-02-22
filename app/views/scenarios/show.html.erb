@@ -1,7 +1,11 @@
 <%= render "shared/header" %>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-  <i class="fas fa-crown fa-3x"></i>
+  <% if current_user.liked_by?(scenario.id) %>
+    <i class="fas fa-crown fa-3x"></i>
+  <% else %>
+    <i class="fas fa-crown fa-3x" style="color:yellow;"></i>
+  <% end %>
 
   <div class="main">
     <div class="scenario_main">

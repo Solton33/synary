@@ -1,5 +1,5 @@
 class ScenariosController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show, :search]
+  before_action :authenticate_user!, except: [:index, :search]
 
   def index
     if params[:tag]

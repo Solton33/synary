@@ -15,4 +15,9 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :comments
   has_many :likes
+
+  def liked_by?(scenario_id)
+    likes.where(scenario_id: scenario_id).exists?
+  end
+
 end

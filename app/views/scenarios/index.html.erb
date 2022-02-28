@@ -1,9 +1,14 @@
 <%= render "shared/header" %>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  
   <h1 class="new_topic">- NEW TOPIC -</h1>
       <% @scenarios.each do |scenario| %>
+        <span class="like_count">
+          <i class="fas fa-crown fa-sm" style="color:yellow;" ></i> : <%= scenario.likes.count %>
+        </span>
         <div class="contents_row">
-          <%= render partial: "scenario", locals: { scenario: scenario} %>
+          <%= render partial: "shared/scenario", locals: { scenario: scenario} %>
         </div>
       <% end %>
     

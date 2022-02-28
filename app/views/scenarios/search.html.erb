@@ -2,6 +2,6 @@
 
 <div class="contents row">
   <% @scenarios.each do |scenario| %>
-    <%= render partial: "scenario", locals: { scenario: scenario } %>
+    <%= render partial: "shared/scenario", locals: { scenario: scenario } %>
   <% end %>
 </div>

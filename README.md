@@ -52,6 +52,7 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 - has_many :scenarios
 - has_many :comments
+- has_many :likes
 
 ## scenarios テーブル
 
@@ -64,17 +65,25 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 - belongs_to :user
 - has_many :comments
-- has_many :scenario_tas
-- has_many :tags, through: :scenario_tags
+- has_many :likes
 
-## comment テーブル
+## comments テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| comment  | string     |                                |
-| user     | references | null: false, foreign_key: true |
-| scenario | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| comment     | string     |                                |
+| user_id     | integer    | null: false, foreign_key: true |
+| scenario_id | integer    | null: false, foreign_key: true |
 
 - belongs_to :user
 - belongs_to :scenario
 
+## likes テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user_id     | integer    | null: false, foreign_key: true |
+| scenario_id | integer    | null: false, foreign_key: true |
+
+- belongs_to :user
+- belongs_to :scenario

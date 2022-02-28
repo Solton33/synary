@@ -7,6 +7,7 @@ class ScenariosController < ApplicationController
     else
       @scenarios = Scenario.all.order(created_at: :desc)
     end
+    @scenario = Scenario.includes(:likes).sort {|a,b| b.likes.size <=> a.likes.size}
   end
 
   def new

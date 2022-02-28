@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  
+    <% if current_user.liked_by?(scenario.id) %>
+      <%= link_to destroy_like_path(scenario), class: "like_button", method: :delete, remote: true do %>
+        <i class="fas fa-crown fa-3x like_off" ></i>
+      <% end%>
+    <% else %>
+      <%= link_to create_like_path(scenario), class: "like_button", method: :post, remote: true do %>
+        <i class="fas fa-crown fa-3x like_on" ></i>
+      <% end %>
+    <% end %>

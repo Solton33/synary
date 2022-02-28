@@ -1,17 +1,7 @@
 <%= render "shared/header" %>
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-  <div class="like_button">
-    <% if current_user.liked_by?(@scenario.id) %>
-      <%= link_to destroy_like_path(@scenario), method: :DELETE do %>
-        <i class="fas fa-crown fa-3x" style="color:yellow;" ></i>
-      <% end%>
-    <% else %>
-      <%= link_to create_like_path(@scenario), method: :POST do %>
-        <i class="fas fa-crown fa-3x" ></i>
-      <% end %>
-    <% end %>
-  </div>
+<div id="scenario_<%= @scenario.id %>" >
+  <%= render partial: 'shared/like', locals: {scenario: @scenario} %>
+</div>
 
   <div class="main">
     <div class="scenario_main">

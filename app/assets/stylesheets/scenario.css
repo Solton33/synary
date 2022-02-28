@@ -137,3 +137,7 @@ border-radius: 2em;
   padding: 5px 30px 5px 5px;
 }
 
+.like_off{
+  color: yellow !important;
+}
+

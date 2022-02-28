@@ -1,7 +1,9 @@
 <%= render "shared/header" %>
-<div id="scenario_<%= @scenario.id %>" >
-  <%= render partial: 'shared/like', locals: {scenario: @scenario} %>
-</div>
+<% if current_user.id != @scenario.user.id %>
+  <div id="scenario_<%= @scenario.id %>" >
+    <%= render partial: 'shared/like', locals: {scenario: @scenario} %>
+  </div>
+<% end %>
 
   <div class="main">
     <div class="scenario_main">

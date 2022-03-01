@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+<h1 class="topic">- SEARCH -</h1>
 <div class="contents row">
   <% @scenarios.each do |scenario| %>
     <%= render partial: "shared/scenario", locals: { scenario: scenario } %>

@@ -63,3 +63,4 @@ gem 'image_processing', '~> 1.2'
 gem 'trix-rails', require: 'trix'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'jquery-rails'
+gem "nokogiri", ">= 1.13.2"

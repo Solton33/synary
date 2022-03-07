@@ -1,12 +1,12 @@
 
 <%= form_with model: @scenario, local: true do |form| %>
-      <div class="title">
-        <%= form.text_field :title, placeholder: "タイトル" %>
-      </div>
-      <div class="tag">
-        <%= form.text_field :tag_list, placeholder: "タグ(複数つける場合は『 , 』で区切る)", value: @scenario.tag_list.join(',') %>
-      </div>
-      <%= form.file_field :image %>
-      <%= form.text_area :scenario, placeholder: "テキスト", rows: "10" %>
-      <%= form.submit "編集" %>
-    <% end %>
+  <div class="title">
+    <%= form.text_field :title, placeholder: "タイトル" %>
+  </div>
+  <div class="tag">
+    <%= form.text_field :tag_list, placeholder: "タグ(複数つける場合は『 , 』で区切る)", value: @scenario.tag_list.join(',') %>
+  </div>
+  <%= form.file_field :image %>
+  <%= form.text_area :scenario, placeholder: "テキスト", rows: "10" %>
+  <%= form.submit "投稿" %>
+<% end %>

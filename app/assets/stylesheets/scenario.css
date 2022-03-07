@@ -51,7 +51,7 @@ form input[type="submit"]:hover {
 
 .contents_row{
   display: inline-flex;
-  padding: 15px;
+  padding: 30px;
 }
 
 .content_post{
@@ -135,6 +135,8 @@ border-radius: 2em;
   border: #84d3ef solid 3px;
   border-radius: 30px;
   padding: 5px 30px 5px 5px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .like_off{

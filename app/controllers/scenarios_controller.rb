@@ -5,9 +5,11 @@ class ScenariosController < ApplicationController
     if params[:tag]
       @scenarios = Scenario.tagged_with(params[:tag])
     else
-      @scenarios = Scenario.all.order(created_at: :desc)
+      order = Scenario.all.order(created_at: :desc)
+      @scenarios = order.first(5)
     end
-    @scenario = Scenario.includes(:likes).sort {|a,b| b.likes.size <=> a.likes.size}
+    like = Scenario.includes(:likes).sort {|a,b| b.likes.size <=> a.likes.size}
+    @scenario = like.first(5)
   end
 
   def new

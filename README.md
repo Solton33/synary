@@ -91,3 +91,10 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 - belongs_to :user
 - belongs_to :scenario
+
+## characters テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| user_id     | integer    | null: false, foreign_key: true |
+| scenario_id | integer    | null: false, foreign_key: true |

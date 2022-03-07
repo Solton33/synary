@@ -1,15 +1,10 @@
 
 <div class="content_post">
-  <% if scenario.image.present? %>
-    <%= link_to scenario_path(scenario.id),metod: :get do %>
-      <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
-    <% end %>
-  <% else %>
-    <%= link_to scenario_path(scenario.id),metod: :get do %>
-      <%= image_tag 'sample.png', class: "content_image" %>
-    <% end %>
+  <%= link_to scenario_path(scenario.id),metod: :get do %>
+    <%= image_tag scenario.image, class: "content_image" if scenario.image.attached? %>
   <% end %>
-  <div class="content_title">
-    <h3><%= scenario.title %></h3>
+    <div class="content_title">
+      <h3><%= scenario.title %></h3>
+    </div>
   </div>
 </div>

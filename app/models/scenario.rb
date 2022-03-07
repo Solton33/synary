@@ -7,6 +7,7 @@ class Scenario < ApplicationRecord
   with_options presence: true do
     validates :scenario
     validates :title, length:{maximum:50}
+    validates :image
   end
 
   acts_as_taggable

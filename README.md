@@ -57,6 +57,7 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 - has_many :scenarios
 - has_many :comments
 - has_many :likes
+- has_many :cthulhus
 
 ## scenarios テーブル
 
@@ -73,28 +74,49 @@ TRPGというゲーム媒体を好む人の中でシナリオを創作する人�
 
 ## comments テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| comment     | string     |                                |
-| user_id     | integer    | null: false, foreign_key: true |
-| scenario_id | integer    | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| comment      | string     |                                |
+| user_id      | integer    | null: false, foreign_key: true |
+| scenario_id  | integer    | null: false, foreign_key: true |
+| cthulhu_id   | integer    | null: false, foreign_key: true |
 
 - belongs_to :user
 - belongs_to :scenario
+- belongs_to :cthulhu
 
 ## likes テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| user_id     | integer    | null: false, foreign_key: true |
-| scenario_id | integer    | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user_id      | integer    | null: false, foreign_key: true |
+| scenario_id  | integer    | null: false, foreign_key: true |
+| cthulhu_id   | integer    | null: false, foreign_key: true |
 
 - belongs_to :user
 - belongs_to :scenario
+- belongs_to :cthulhu
 
-## characters テーブル
+## cthulhus テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| user_id     | integer    | null: false, foreign_key: true |
-| scenario_id | integer    | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| pc_name           | string     | null: false                    |
+| birth_day         | date       |                                |
+| age               | string     |                                |
+| pc_setting        | text       |                                |
+| image             | text       |                                |
+| gender_id         | integer    | null: false                    |
+| strength_id       | integer    | null: false                    |
+| constitution_id   | integer    | null: false                    |
+| power_id          | integer    | null: false                    |
+| dexterity_id      | integer    | null: false                    |
+| appearance_id     | integer    | null: false                    |
+| size_id           | integer    | null: false                    |
+| intelligence_id   | integer    | null: false                    |
+| education_id      | integer    | null: false                    |
+| user              | references | null: false, foreign_key: true |
+
+- has_many :comments
+- has_many :likes
+- belongs_to :user
